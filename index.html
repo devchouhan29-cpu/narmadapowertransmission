@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NARMADA POWER TRANSMISSION | HT/LT लाइन, सबस्टेशन व सोलर EPC | Kasrawad, Khargone (M.P.)</title>
+<meta name="description" content="नर्मदा पावर ट्रांसमिशन — MP DISCOM अप्रूव्ड 'A' क्लास इलेक्ट्रिकल कॉन्ट्रैक्टर। HT/LT लाइन वर्क, ट्रांसफार्मर, 11/33kV सबस्टेशन, सोलर EPC और रूफटॉप सोलर। खरगोन, म.प्र." />
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          black: '#07080B', carbon: '#0D0F15', surface: '#151922',
+          card: '#1C212D', border: '#283042', borderLight: '#3D4860',
+          yellow: '#FFDD00', amber: '#FFB703', orange: '#FF5500',
+          cyan: '#00F0FF', steel: '#94A3B8', muted: '#64748B'
+        }
+      },
+      fontFamily: {
+        heading: ['"Barlow Condensed"', 'sans-serif'],
+        body: ['"Inter"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace']
+      },
+      boxShadow: {
+        'electric': '0 0 25px -4px rgba(255, 221, 0, 0.45)',
+        'orange-glow': '0 0 30px -5px rgba(255, 85, 0, 0.45)',
+        'hard': '5px 5px 0px 0px #FFDD00',
+        'hard-orange': '5px 5px 0px 0px #FF5500',
+        'hard-dark': '5px 5px 0px 0px #000000'
+      }
+    }
+  }
+}
+</script>
+
+<style>
+/* ================= INDUSTRIAL TEXTURES ================= */
+.bg-grid-industrial {
+  background-size: 36px 36px;
+  background-image: linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+}
+.bg-grid-yellow {
+  background-size: 28px 28px;
+  background-image: linear-gradient(to right, rgba(255,221,0,0.10) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255,221,0,0.10) 1px, transparent 1px);
+}
+.hazard-stripe {
+  background: repeating-linear-gradient(-45deg, #FFDD00, #FFDD00 12px, #07080B 12px, #07080B 24px);
+}
+.hazard-thin {
+  background: repeating-linear-gradient(-45deg, #FF5500, #FF5500 8px, #07080B 8px, #07080B 16px);
+}
+.clip-industrial { clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px)); }
+.clip-badge { clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
+.clip-tab { clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #07080B; }
+::-webkit-scrollbar-thumb { background: #FFDD00; border: 2px solid #07080B; }
+::-webkit-scrollbar-thumb:hover { background: #FFB703; }
+
+/* ================= ANIMATIONS ================= */
+@keyframes livePulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: .55; } }
+.pulse-live { animation: livePulse 1.8s infinite ease-in-out; }
+
+@keyframes flowDash { to { stroke-dashoffset: -24; } }
+.wire-flow { stroke-dasharray: 12 12; animation: flowDash .8s linear infinite; }
+
+@keyframes lightPulse { 0%,100% { opacity: 1; } 50% { opacity: .2; } }
+.light-pulse { animation: lightPulse 1.6s ease-in-out infinite; }
+
+@keyframes marquee { to { transform: translateX(-100%); } }
+.marquee-track { display: flex; flex-shrink: 0; align-items: center; animation: marquee 26s linear infinite; }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1); }
+.reveal.visible { opacity: 1; transform: none; }
+.d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; } .d4 { transition-delay: .32s; }
+
+.giant-outline {
+  -webkit-text-stroke: 2px rgba(255,221,0,.55);
+  color: transparent;
+}
+
+input[type=range] { accent-color: #FFDD00; }
+</style>
+</head>
+
+<body class="bg-brand-black text-white font-body selection:bg-brand-yellow selection:text-brand-black antialiased overflow-x-hidden">
+
+<!-- ================= TOP COMPLIANCE & EMERGENCY BAR ================= -->
+<div class="bg-brand-yellow text-brand-black text-xs font-mono font-bold tracking-wider py-1.5 px-4 border-b-2 border-black relative z-[60]">
+  <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+    <div class="flex items-center gap-3 min-w-0">
+      <span class="inline-flex items-center gap-1.5 bg-black text-brand-yellow px-2 py-0.5 text-[10px] uppercase tracking-widest clip-badge font-black">GOVT. APPROVED 'A' CLASS</span>
+      <span class="truncate font-extrabold uppercase">नर्मदा पावर ट्रांसमिशन | MP DISCOM &amp; CEIG APPROVED • HT/LT • सबस्टेशन • सोलर EPC</span>
+    </div>
+    <div class="flex items-center gap-4 text-[11px] font-bold">
+      <span class="flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-red-600 pulse-live"></span>
+        24x7 HT फॉल्ट डेस्क: <a href="tel:+917000703078" class="underline font-extrabold hover:text-brand-orange">+91 7000703078</a>
+      </span>
+      <span class="hidden md:inline bg-black/15 px-2 py-0.5 rounded font-black">📍 कसरावद, खरगोन (म.प्र.)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MAIN NAVIGATION ================= -->
+<nav id="mainNav" class="sticky top-0 z-50 bg-brand-carbon/95 backdrop-blur-md border-b border-brand-border transition-shadow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Brand -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 bg-brand-yellow text-brand-black flex items-center justify-center font-heading font-black text-3xl clip-industrial shadow-hard-dark transition-transform group-hover:scale-105">⚡</div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="font-heading font-black text-2xl sm:text-3xl tracking-tight uppercase leading-none">NARMADA <span class="text-brand-yellow">POWER</span></span>
+            <span class="text-[9px] font-mono font-bold bg-brand-orange text-white px-1.5 py-0.5 uppercase tracking-wider rounded">TRANSMISSION</span>
+          </div>
+          <span class="text-[10px] font-mono tracking-widest text-brand-steel uppercase mt-0.5">HT/LT लाइन • सबस्टेशन • सोलर EPC</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-7 font-heading text-lg tracking-wider uppercase font-bold text-gray-300">
+        <a href="#profile" class="hover:text-brand-yellow transition-colors flex items-center gap-1"><span class="text-brand-yellow font-mono text-xs">01/</span> प्रोफाइल</a>
+        <a href="#services" class="hover:text-brand-yellow transition-colors flex items-center gap-1"><span class="text-brand-yellow font-mono text-xs">02/</span> सेवाएं</a>
+        <a href="#solar" class="hover:text-brand-yellow transition-colors flex items-center gap-1"><span class="text-brand-yellow font-mono text-xs">03/</span> सोलर</a>
+        <a href="#calculator" class="hover:text-brand-yellow transition-colors flex items-center gap-1"><span class="text-brand-yellow font-mono text-xs">04/</span> कैलकुलेटर</a>
+        <a href="#contact" class="hover:text-brand-yellow transition-colors flex items-center gap-1"><span class="text-brand-yellow font-mono text-xs">05/</span> संपर्क</a>
+      </div>
+
+      <!-- CTA -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="tel:+917000703078" class="flex flex-col text-right font-mono text-xs mr-1 leading-tight">
+          <span class="text-brand-steel text-[10px] uppercase">इंजीनियरिंग डेस्क</span>
+          <span class="font-bold text-brand-yellow text-base tracking-wide">7000703078</span>
+        </a>
+        <a href="#contact" class="px-5 py-2.5 bg-brand-yellow text-brand-black font-heading font-black text-base uppercase tracking-wider hover:bg-white transition-all shadow-hard active:translate-x-1 active:translate-y-1">फ्री कोटेशन</a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button id="mobileMenuBtn" class="lg:hidden p-2 text-white border border-brand-border hover:bg-brand-surface" aria-label="मेनू खोलें">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div id="mobileMenu" class="hidden lg:hidden bg-brand-carbon border-t border-brand-border px-6 py-6 font-heading uppercase text-xl font-bold tracking-wide">
+    <div class="flex flex-col gap-4">
+      <a href="#profile" class="mobile-link hover:text-brand-yellow">01. कंपनी प्रोफाइल</a>
+      <a href="#services" class="mobile-link hover:text-brand-yellow">02. HT/LT व सबस्टेशन सेवाएं</a>
+      <a href="#solar" class="mobile-link hover:text-brand-yellow">03. सोलर EPC व रूफटॉप</a>
+      <a href="#calculator" class="mobile-link hover:text-brand-yellow">04. लोड व लागत कैलकुलेटर</a>
+      <a href="#faq" class="mobile-link hover:text-brand-yellow">05. सवाल-जवाब (FAQ)</a>
+      <a href="#contact" class="mobile-link hover:text-brand-yellow">06. कोटेशन / संपर्क</a>
+      <div class="pt-4 border-t border-brand-border flex flex-col gap-2">
+        <div class="font-mono text-[11px] text-brand-steel uppercase">24x7 फॉल्ट डेस्क</div>
+        <a href="tel:+917000703078" class="font-mono font-bold text-brand-yellow text-lg">+91 7000703078</a>
+      </div>
+    </div>
+  </div>
+  <div class="hazard-thin h-1.5 w-full"></div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header id="home" class="relative bg-brand-black bg-grid-industrial overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-yellow/10 blur-[120px] rounded-full pointer-events-none"></div>
+  <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-brand-orange/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10 lg:pt-20 grid lg:grid-cols-12 gap-10 items-center relative">
+
+    <!-- Copy -->
+    <div class="lg:col-span-7">
+      <div class="flex flex-wrap items-center gap-2 mb-6 reveal">
+        <span class="font-mono text-[11px] font-bold bg-brand-yellow text-brand-black px-3 py-1 uppercase tracking-widest clip-badge">EST. 2012 — KHARGONE, M.P.</span>
+        <span class="font-mono text-[11px] font-bold border border-brand-border text-brand-steel px-3 py-1 uppercase tracking-widest">33kV → 415V → SOLAR</span>
+      </div>
+
+      <h1 class="font-heading font-black uppercase leading-[0.85] tracking-tight reveal">
+        <span class="block text-6xl sm:text-7xl lg:text-8xl xl:text-9xl">बिजली का</span>
+        <span class="block text-6xl sm:text-7xl lg:text-8xl xl:text-9xl text-brand-yellow">हर काम,</span>
+        <span class="block text-6xl sm:text-7xl lg:text-8xl xl:text-9xl">एक ही ठेके में।</span>
+      </h1>
+
+      <p class="mt-6 max-w-xl text-brand-steel text-base sm:text-lg leading-relaxed reveal d1">
+        <strong class="text-white">HT/LT लाइन वर्क, ट्रांसफार्मर, 11/33kV सबस्टेशन, सोलर EPC और रूफटॉप सोलर</strong> — सर्वे और BOQ से लेकर CEIG अप्रूवल और कमीशनिंग तक। कोई शॉर्टकट नहीं, सिर्फ़ सॉलिड इंजीनियरिंग।
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4 reveal d2">
+        <a href="#contact" class="px-7 py-4 bg-brand-yellow text-brand-black font-heading font-black text-xl uppercase tracking-wider hover:bg-white transition-all shadow-hard active:translate-x-1 active:translate-y-1">
+          फ्री साइट सर्वे बुक करें →
+        </a>
+        <a href="tel:+917000703078" class="px-7 py-4 border-2 border-brand-borderLight font-heading font-black text-xl uppercase tracking-wider hover:border-brand-yellow hover:text-brand-yellow transition-all">
+          📞 7000703078
+        </a>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-px bg-brand-border border border-brand-border reveal d3" id="stats">
+        <div class="bg-brand-carbon p-4">
+          <div class="font-heading font-black text-3xl xl:text-4xl text-brand-yellow"><span data-count="12" data-suffix="+">0</span></div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted mt-1">वर्षों का अनुभव</div>
+        </div>
+        <div class="bg-brand-carbon p-4">
+          <div class="font-heading font-black text-3xl xl:text-4xl"><span data-count="350" data-suffix="+">0</span></div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted mt-1">प्रोजेक्ट पूर्ण</div>
+        </div>
+        <div class="bg-brand-carbon p-4">
+          <div class="font-heading font-black text-3xl xl:text-4xl"><span data-count="850" data-suffix="+ KM">0</span></div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted mt-1">लाइन बिछाई</div>
+        </div>
+        <div class="bg-brand-carbon p-4">
+          <div class="font-heading font-black text-3xl xl:text-4xl text-brand-orange"><span data-count="27" data-suffix="+ MW">0</span></div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted mt-1">सोलर इंस्टॉल</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tower Visual + Grid Status -->
+    <div class="lg:col-span-5 relative reveal d2">
+      <div class="absolute top-4 right-4 z-10 bg-brand-carbon/95 border border-brand-border px-4 py-3 clip-industrial">
+        <div class="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-brand-muted">
+          <span class="w-2 h-2 rounded-full bg-green-500 pulse-live"></span> LIVE GRID STATUS
+        </div>
+        <div class="font-mono font-bold text-sm mt-1 text-brand-yellow">STABLE — 33kV / 50.02 Hz</div>
+        <div class="font-mono text-[10px] text-brand-steel mt-0.5">FEEDER: KASRAWAD-II • LAST FAULT: 47 MIN</div>
+      </div>
+
+      <svg viewBox="0 0 420 560" class="w-full max-w-md mx-auto" fill="none" role="img" aria-label="Transmission tower graphic">
+        <!-- top arm wires -->
+        <path d="M0 90 Q70 118 128 120" stroke="#3D4860" stroke-width="2.5"/>
+        <path d="M292 120 Q350 118 420 90" stroke="#3D4860" stroke-width="2.5"/>
+        <path d="M0 90 Q70 118 128 120" stroke="#FFDD00" stroke-width="2.5" class="wire-flow"/>
+        <path d="M292 120 Q350 118 420 90" stroke="#FFDD00" stroke-width="2.5" class="wire-flow"/>
+        <!-- second arm wires -->
+        <path d="M0 160 Q80 188 148 188" stroke="#3D4860" stroke-width="2.5"/>
+        <path d="M272 188 Q340 188 420 160" stroke="#3D4860" stroke-width="2.5"/>
+        <path d="M0 160 Q80 188 148 188" stroke="#FF5500" stroke-width="2.5" class="wire-flow"/>
+        <path d="M272 188 Q340 188 420 160" stroke="#FF5500" stroke-width="2.5" class="wire-flow"/>
+
+        <!-- tower -->
+        <g stroke="#94A3B8" stroke-width="2.5" stroke-linecap="square">
+          <path d="M168 540 L196 128"/>
+          <path d="M252 540 L224 128"/>
+          <path d="M196 128 L224 128"/>
+          <path d="M210 128 L210 106"/>
+          <!-- arms -->
+          <path d="M128 108 L292 108"/>
+          <path d="M148 176 L272 176"/>
+          <path d="M128 108 L148 176"/>
+          <path d="M292 108 L272 176"/>
+          <!-- insulators -->
+          <path d="M128 108 L128 120"/>
+          <path d="M292 108 L292 120"/>
+          <path d="M148 176 L148 188"/>
+          <path d="M272 176 L272 188"/>
+          <!-- bracing -->
+          <path d="M171 540 L249 480 M249 540 L171 480"/>
+          <path d="M174 480 L246 420 M246 480 L174 420"/>
+          <path d="M178 420 L242 360 M242 420 L178 360"/>
+          <path d="M182 360 L238 300 M238 360 L182 300"/>
+          <path d="M186 300 L234 240 M234 300 L186 240"/>
+          <path d="M190 240 L230 184 M230 240 L190 184"/>
+          <path d="M172 480 L248 480"/>
+          <path d="M176 420 L244 420"/>
+          <path d="M180 360 L240 360"/>
+          <path d="M184 300 L236 300"/>
+          <path d="M188 240 L232 240"/>
+        </g>
+        <!-- aviation light -->
+        <circle cx="210" cy="100" r="5" fill="#FF3B30" class="light-pulse"/>
+        <!-- ground -->
+        <rect x="150" y="546" width="38" height="8" fill="#3D4860"/>
+        <rect x="232" y="546" width="38" height="8" fill="#3D4860"/>
+        <line x1="0" y1="554" x2="420" y2="554" stroke="#283042" stroke-width="3"/>
+      </svg>
+
+      <div class="mt-2 flex justify-center gap-2 flex-wrap">
+        <span class="font-mono text-[10px] font-bold bg-brand-surface border border-brand-border px-2.5 py-1 uppercase tracking-widest text-brand-steel">⚡ MP DISCOM ENLISTED</span>
+        <span class="font-mono text-[10px] font-bold bg-brand-surface border border-brand-border px-2.5 py-1 uppercase tracking-widest text-brand-steel">✔ CEIG 'A' CLASS</span>
+        <span class="font-mono text-[10px] font-bold bg-brand-surface border border-brand-border px-2.5 py-1 uppercase tracking-widest text-brand-steel">☀ PM SURYA GHAR वेंडर</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hazard divider -->
+  <div class="hazard-stripe h-3 w-full"></div>
+</header>
+
+<!-- ================= MARQUEE TICKER ================= -->
+<div class="bg-brand-yellow text-brand-black py-2.5 overflow-hidden border-b-4 border-black">
+  <div class="flex w-max">
+    <div class="marquee-track font-heading font-black uppercase text-lg sm:text-xl tracking-wider whitespace-nowrap">
+      <span class="mx-5">33kV HT लाइन</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">415V LT नेटवर्क</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">ट्रांसफार्मर 25–2500 kVA</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">सबस्टेशन EPC</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">मेगा सोलर EPC</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">रूफटॉप सोलर</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">नेट मीटरिंग</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">CEIG अप्रूवल</span><span class="text-brand-orange">✦</span>
+    </div>
+    <div class="marquee-track font-heading font-black uppercase text-lg sm:text-xl tracking-wider whitespace-nowrap" aria-hidden="true">
+      <span class="mx-5">33kV HT लाइन</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">415V LT नेटवर्क</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">ट्रांसफार्मर 25–2500 kVA</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">सबस्टेशन EPC</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">मेगा सोलर EPC</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">रूफटॉप सोलर</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">नेट मीटरिंग</span><span class="text-brand-orange">✦</span>
+      <span class="mx-5">CEIG अप्रूवल</span><span class="text-brand-orange">✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= COMPANY PROFILE ================= -->
+<section id="profile" class="bg-brand-carbon py-20 lg:py-28 border-b border-brand-border relative overflow-hidden">
+  <div class="absolute top-0 left-0 font-heading font-black text-[18vw] leading-none giant-outline opacity-[0.07] pointer-events-none select-none">PROFILE</div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+    <div class="grid lg:grid-cols-12 gap-12">
+      <!-- Text -->
+      <div class="lg:col-span-7 reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="font-mono text-brand-yellow font-bold">01/</span>
+          <span class="font-mono text-xs uppercase tracking-[0.3em] text-brand-steel">कंपनी प्रोफाइल — Who We Are</span>
+        </div>
+        <h2 class="font-heading font-black uppercase text-5xl sm:text-6xl lg:text-7xl leading-[0.9]">
+          मालवा-निमाड़ की धरती से, <span class="text-brand-yellow">पूरे म.प्र. को बिजली</span> पहुँचाते हैं।
+        </h2>
+        <p class="mt-6 text-brand-steel text-lg leading-relaxed">
+          <strong class="text-white">नर्मदा पावर ट्रांसमिशन</strong> कसरावद (खरगोन, म.प्र.) में स्थित एक सरकारी-मान्यता प्राप्त <strong class="text-white">'A' क्लास इलेक्ट्रिकल कॉन्ट्रैक्टर</strong> है। पिछले 12+ वर्षों से हम MP DISCOM (MPPoKCL / MPSPDCL), उद्योग, कॉटन जिनिंग प्लांट्स, फूड प्रोसेसिंग यूनिट्स, स्कूलों और किसान भाइयों के लिए <strong class="text-white">HT/LT लाइन, ट्रांसफार्मर, सबस्टेशन और सोलर प्रोजेक्ट</strong> पूरे कर रहे हैं।
+        </p>
+        <p class="mt-4 text-brand-steel leading-relaxed">
+          हमारी अपनी टीम — लाइसेंस्ड सुपरवाइजर, ट्रेंड लाइनमैन, क्रेन व टेंशन स्ट्रिंगिंग रिग, टेस्टिंग वैन — सब कुछ इन-हाउस। इसलिए डेडलाइन का बहाना नहीं चलता। <span class="text-brand-yellow font-semibold">हमारा नाम ही हमारी गारंटी है।</span>
+        </p>
+
+        <!-- Approvals checklist -->
+        <div class="mt-8 grid sm:grid-cols-2 gap-3">
+          <div class="flex items-start gap-3 bg-brand-surface border border-brand-border p-4 clip-industrial">
+            <span class="text-brand-yellow font-black text-xl">✔</span>
+            <div><div class="font-heading font-bold uppercase text-lg leading-tight">CEIG 'A' क्लास लाइसेंस</div><div class="text-sm text-brand-muted">कॉन्ट्रैक्टर + लाइसेंस्ड सुपरवाइजर दोनों</div></div>
+          </div>
+          <div class="flex items-start gap-3 bg-brand-surface border border-brand-border p-4 clip-industrial">
+            <span class="text-brand-yellow font-black text-xl">✔</span>
+            <div><div class="font-heading font-bold uppercase text-lg leading-tight">MP DISCOM एनलिस्टमेंट</div><div class="text-sm text-brand-muted">HT/LT वर्क + ट्रांसफार्मर रिपेयर स्लैब</div></div>
+          </div>
+          <div class="flex items-start gap-3 bg-brand-surface border border-brand-border p-4 clip-industrial">
+            <span class="text-brand-yellow font-black text-xl">✔</span>
+            <div><div class="font-heading font-bold uppercase text-lg leading-tight">MNRE / PM सूर्य घर रजिस्टर्ड</div><div class="text-sm text-brand-muted">सब्सिडी व नेट-मीटरिंग पूरी लाइज़न</div></div>
+          </div>
+          <div class="flex items-start gap-3 bg-brand-surface border border-brand-border p-4 clip-industrial">
+            <span class="text-brand-yellow font-black text-xl">✔</span>
+            <div><div class="font-heading font-bold uppercase text-lg leading-tight">GeM &amp; NSIC रजिस्टर्ड</div><div class="text-sm text-brand-muted">सरकारी टेंडर व पीओ-आधारित कार्य</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Specs panel -->
+      <div class="lg:col-span-5 reveal d2">
+        <div class="bg-brand-black border-2 border-brand-border clip-industrial">
+          <div class="bg-brand-yellow text-brand-black px-5 py-3 clip-tab w-fit">
+            <span class="font-heading font-black uppercase tracking-wider text-xl">कंपनी स्पेशिफिकेशन</span>
+          </div>
+          <div class="p-6 font-mono text-sm space-y-4">
+            <div class="flex justify-between border-b border-brand-border pb-3"><span class="text-brand-muted">फर्म का नाम</span><span class="font-bold text-white text-right">NARMADA POWER TRANSMISSION</span></div>
+            <div class="flex justify-between border-b border-brand-border pb-3"><span class="text-brand-muted">मुख्यालय</span><span class="font-bold text-white">कसरावद, खरगोन (म.प्र.)</span></div>
+            <div class="flex justify-between border-b border-brand-border pb-3"><span class="text-brand-muted">कार्यक्षेत्र</span><span class="font-bold text-white">म.प्र. + महाराष्ट्र बॉर्डर बेल्ट</span></div>
+            <div class="flex justify-between border-b border-brand-border pb-3"><span class="text-brand-muted">क्लास</span><span class="font-bold text-brand-yellow">'A' CLASS — CEIG</span></div>
+            <div class="flex justify-between border-b border-brand-border pb-3"><span class="text-brand-muted">वोल्टेज क्षमता</span><span class="font-bold text-white">33kV तक HT + SOLAR</span></div>
+            <div class="flex justify-between border-b border-brand-border pb-3"><span class="text-brand-muted">टीम साइज़</span><span class="font-bold text-white">45+ स्टाफ व लाइनमैन</span></div>
+            <div class="flex justify-between"><span class="text-brand-muted">वारंटी</span><span class="font-bold text-brand-yellow">5 वर्ष वर्कमैनशिप</span></div>
+          </div>
+          <div class="hazard-stripe h-2.5 w-full"></div>
+        </div>
+
+        <div class="mt-6 bg-brand-orange text-white p-6 clip-industrial relative">
+          <div class="font-heading font-black uppercase text-3xl leading-none">हमारा वादा:</div>
+          <p class="mt-2 font-semibold text-white/95">"जो BOQ दिखाते हैं, वही बिल आता है। कोई छिपा हुआ खर्च नहीं — क्योंकि बिजली के काम में भरोसा सबसे बड़ा वोल्टेज है।"</p>
+          <div class="font-mono text-xs mt-3 uppercase tracking-widest text-white/80">— संस्थापक, नर्मदा पावर ट्रांसमिशन</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="bg-brand-black bg-grid-industrial py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="font-mono text-brand-yellow font-bold">02/</span>
+          <span class="font-mono text-xs uppercase tracking-[0.3em] text-brand-steel">हमारी सेवाएं — What We Build</span>
+        </div>
+        <h2 class="font-heading font-black uppercase text-5xl sm:text-6xl lg:text-7xl leading-[0.9]">
+          पोल से पैनल तक —<br/><span class="text-brand-yellow">सब कुछ इन-हाउस।</span>
+        </h2>
+      </div>
+      <p class="max-w-md text-brand-steel">हर सेवा में फ्री साइट सर्वे, लिखित BOQ, DISCOM/CEIG लाइज़न और कमीशनिंग रिपोर्ट शामिल है। <a href="#contact" class="text-brand-yellow underline font-semibold">कोटेशन मांगें →</a></p>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+      <!-- 1. HT Line -->
+      <article class="group bg-brand-card border border-brand-border hover:border-brand-yellow p-7 clip-industrial transition-all hover:-translate-y-1 hover:shadow-electric reveal">
+        <div class="flex items-start justify-between">
+          <div class="w-14 h-14 bg-brand-yellow text-brand-black flex items-center justify-center clip-industrial group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 2v20M6 6h12M7 6l-4 5M17 6l4 5M9 2h6M4 22h16"/></svg>
+          </div>
+          <span class="font-mono text-brand-muted font-bold">SRV-01</span>
+        </div>
+        <h3 class="font-heading font-black uppercase text-3xl mt-5">11/33kV <span class="text-brand-yellow">HT लाइन वर्क</span></h3>
+        <p class="text-brand-steel text-sm mt-2 leading-relaxed">पोल/टावर फाउंडेशन से स्ट्रिंगिंग तक — पूरा HT लाइन काम DISCOM स्पेसिफिकेशन पर।</p>
+        <ul class="mt-4 space-y-1.5 font-mono text-xs text-brand-steel">
+          <li>▸ ACSR / AB केबल स्ट्रिंगिंग</li>
+          <li>▸ पिन व सस्पेंशन इंसुलेटर फिटिंग</li>
+          <li>▸ DEEB-CEIG ड्रॉइंग अप्रूवल लाइज़न</li>
+        </ul>
+      </article>
+
+      <!-- 2. LT Line -->
+      <article class="group bg-brand-card border border-brand-border hover:border-brand-cyan p-7 clip-industrial transition-all hover:-translate-y-1 reveal d1">
+        <div class="flex items-start justify-between">
+          <div class="w-14 h-14 bg-brand-cyan text-black flex items-center justify-center clip-industrial group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M3 12c3-6 6 6 9 0s6 6 9 0M3 12h2m14 0h2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+          </div>
+          <span class="font-mono text-brand-muted font-bold">SRV-02</span>
+        </div>
+        <h3 class="font-heading font-black uppercase text-3xl mt-5">415V <span class="text-brand-cyan">LT लाइन व डिस्ट्रीब्यूशन</span></h3>
+        <p class="text-brand-steel text-sm mt-2 leading-relaxed">गाँव, कॉलोनी, फैक्ट्री कैंपस का पूरा LT नेटवर्क — AB केबल, स्ट्रीट लाइट, मीटरिंग।</p>
+        <ul class="mt-4 space-y-1.5 font-mono text-xs text-brand-steel">
+          <li>▸ AB केबल व DP स्ट्रक्चर</li>
+          <li>▸ स्ट्रीट लाइटिंग (LED सोलर ऑप्शन)</li>
+          <li>▸ लोड बैलेंसिंग व मीटर सेटिंग</li>
+        </ul>
+      </article>
+
+      <!-- 3. Transformer -->
+      <article class="group bg-brand-card border border-brand-border hover:border-brand-orange p-7 clip-industrial transition-all hover:-translate-y-1 hover:shadow-orange-glow reveal d2">
+        <div class="flex items-start justify-between">
+          <div class="w-14 h-14 bg-brand-orange text-white flex items-center justify-center clip-industrial group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/><circle cx="9.5" cy="9.5" r="2"/><circle cx="14.5" cy="14.5" r="2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+          </div>
+          <span class="font-mono text-brand-muted font-bold">SRV-03</span>
+        </div>
+        <h3 class="font-heading font-black uppercase text-3xl mt-5">ट्रांसफार्मर <span class="text-brand-orange">25–2500 kVA</span></h3>
+        <p class="text-brand-steel text-sm mt-2 leading-relaxed">नई सप्लाई, इंस्टॉलेशन, ऑयल फिल्ट्रेशन, रिपेयर व ओवरहॉलिंग — प्लिंथ से HT पैनल तक।</p>
+        <ul class="mt-4 space-y-1.5 font-mono text-xs text-brand-steel">
+          <li>▸ प्लिंथ, फेंसिंग व अर्थिंग मैट</li>
+          <li>▸ ऑयल टेस्ट + HVK टेस्ट रिपोर्ट</li>
+          <li>▸ OLTC / CT-PT मीटरिंग यूनिट</li>
+        </ul>
+      </article>
+
+      <!-- 4. Substation -->
+      <article class="group bg-brand-card border border-brand-border hover:border-brand-yellow p-7 clip-industrial transition-all hover:-translate-y-1 reveal">
+        <div class="flex items-start justify-between">
+          <div class="w-14 h-14 bg-brand-yellow text-brand-black flex items-center justify-center clip-industrial group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 3l8 18H4l8-18zM12 9v6M9 21l3-6 3 6M7 15h10"/></svg>
+          </div>
+          <span class="font-mono text-brand-muted font-bold">SRV-04</span>
+        </div>
+        <h3 class="font-heading font-black uppercase text-3xl mt-5">11/33kV <span class="text-brand-yellow">सबस्टेशन EPC</span></h3>
+        <p class="text-brand-steel text-sm mt-2 leading-relaxed">बे एक्सटेंशन, कंट्रोल रूम, प्रोटेक्शन पैनल, बैटरी बैंक — टर्नकी हैंडओवर।</p>
+        <ul class="mt-4 space-y-1.5 font-mono text-xs text-brand-steel">
+          <li>▸ VCB / SF6 ब्रेकर इंस्टॉलेशन</li>
+          <li>▸ रिले सेटिंग व ट्राइप टेस्ट</li>
+          <li>▸ SCADA-रेडी मीटरिंग</li>
+        </ul>
+      </article>
+
+      <!-- 5. Solar EPC -->
+      <article class="group bg-gradient-to-br from-brand-card to-brand-surface border-2 border-brand-yellow p-7 clip-industrial transition-all hover:-translate-y-1 hover:shadow-electric relative overflow-hidden reveal d1">
+        <div class="absolute top-0 right-0 bg-brand-yellow text-brand-black font-mono text-[10px] font-black px-3 py-1 uppercase tracking-widest clip-badge">★ फ्लैगशिप</div>
+        <div class="w-14 h-14 bg-brand-yellow text-brand-black flex items-center justify-center clip-industrial group-hover:scale-110 transition-transform">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
+        </div>
+        <h3 class="font-heading font-black uppercase text-3xl mt-5">मेगा <span class="text-brand-yellow">सोलर EPC (MW स्केल)</span></h3>
+        <p class="text-brand-steel text-sm mt-2 leading-relaxed">ग्राउंड-माउंट सोलर प्लांट — लैंड सर्वे, स्ट्रक्चर, मॉड्यूल, इन्वर्टर व ग्रिड सिंक।</p>
+        <ul class="mt-4 space-y-1.5 font-mono text-xs text-brand-steel">
+          <li>▸ 500kW – 5MW टर्नकी</li>
+          <li>▸ सोलर पंप / एग्री फीडर मॉडल</li>
+          <li>▸ जेनरेशन रिपोर्टिंग + O&amp;M AMC</li>
+        </ul>
+      </article>
+
+      <!-- 6. Rooftop Solar -->
+      <article class="group bg-brand-card border border-brand-border hover:border-brand-amber p-7 clip-industrial transition-all hover:-translate-y-1 reveal d2">
+        <div class="flex items-start justify-between">
+          <div class="w-14 h-14 bg-brand-amber text-brand-black flex items-center justify-center clip-industrial group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-5h6v5"/><circle cx="12" cy="7" r="1.6" fill="currentColor"/></svg>
+          </div>
+          <span class="font-mono text-brand-muted font-bold">SRV-06</span>
+        </div>
+        <h3 class="font-heading font-black uppercase text-3xl mt-5">रूफटॉप सोलर <span class="text-brand-amber">1kW–1MW</span></h3>
+        <p class="text-brand-steel text-sm mt-2 leading-relaxed">घर, दुकान, स्कूल, हॉस्पिटल के लिए ऑन-ग्रिड सिस्टम — सब्सिडी और नेट-मीटरिंग हमारी जिम्मेदारी।</p>
+        <ul class="mt-4 space-y-1.5 font-mono text-xs text-brand-steel">
+          <li>▸ PM सूर्य घर सब्सिडी (₹78,000 तक)</li>
+          <li>▸ 25 वर्ष परफॉरमेंस वारंटी</li>
+          <li>▸ 0-मॉडल: बिना पैसे, EMI विकल्प</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOLAR SPOTLIGHT ================= -->
+<section id="solar" class="bg-brand-yellow text-brand-black py-20 lg:py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-grid-yellow opacity-40"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 bg-black text-brand-yellow font-mono text-[11px] font-black px-3 py-1 uppercase tracking-widest clip-badge mb-5">03/ सोलर स्पॉटलाइट</div>
+        <h2 class="font-heading font-black uppercase text-5xl sm:text-6xl lg:text-7xl leading-[0.9]">
+          अपनी बिजली <span class="underline decoration-8 decoration-brand-orange underline-offset-8">खुद बनाओ।</span>
+        </h2>
+        <p class="mt-6 text-lg font-medium leading-relaxed text-black/80">
+          रूफटॉप पर लगवाओ, बिजली बिल <strong>90% तक कम</strong> करो — और सरकार भी सब्सिडी देगी। हम सर्वे से लेकर सब्सिडी अकाउंट में आने तक पूरा काम करते हैं। <strong>आपको सिर्फ़ स्विच ऑन करना है।</strong>
+        </p>
+
+        <div class="mt-8 grid sm:grid-cols-3 gap-4">
+          <div class="bg-black text-white p-5 clip-industrial">
+            <div class="font-heading font-black text-4xl text-brand-yellow">₹78K</div>
+            <div class="font-mono text-[11px] uppercase tracking-widest text-brand-steel mt-1">तक सरकारी सब्सिडी</div>
+          </div>
+          <div class="bg-black text-white p-5 clip-industrial">
+            <div class="font-heading font-black text-4xl text-brand-yellow">25 YR</div>
+            <div class="font-mono text-[11px] uppercase tracking-widest text-brand-steel mt-1">मॉड्यूल वारंटी</div>
+          </div>
+          <div class="bg-black text-white p-5 clip-industrial">
+            <div class="font-heading font-black text-4xl text-brand-yellow">3–4 YR</div>
+            <div class="font-mono text-[11px] uppercase tracking-widest text-brand-steel mt-1">में खर्च वसूल</div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#calculator" class="px-6 py-3.5 bg-black text-brand-yellow font-heading font-black text-lg uppercase tracking-wider hover:bg-brand-carbon transition-all">सोलर सेविंग्स निकालें ↓</a>
+          <a href="https://wa.me/917000703078?text=मुझे%20रूफटॉप%20सोलर%20के%20लिए%20जानकारी%20चाहिए।" target="_blank" rel="noopener" class="px-6 py-3.5 border-2 border-black font-heading font-black text-lg uppercase tracking-wider hover:bg-black hover:text-brand-yellow transition-all">WhatsApp करें</a>
+        </div>
+      </div>
+
+      <!-- Mini solar calculator -->
+      <div class="bg-brand-black text-white p-7 sm:p-9 clip-industrial border-4 border-black shadow-hard-dark reveal d2">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="font-heading font-black uppercase text-3xl">☀ सोलर सेविंग्स कैलकुलेटर</h3>
+          <span class="font-mono text-[10px] bg-brand-orange text-white px-2 py-1 uppercase font-black tracking-widest">LIVE</span>
+        </div>
+        <label class="font-mono text-xs uppercase tracking-widest text-brand-steel">आपकी महीने की बिजली के बिल (₹)</label>
+        <div class="flex items-center gap-4 mt-2">
+          <input id="solarBill" type="number" min="500" max="200000" step="100" value="3000"
+            class="w-full bg-brand-surface border-2 border-brand-border focus:border-brand-yellow outline-none px-4 py-3 font-mono font-bold text-xl text-brand-yellow" />
+          <span class="font-heading font-black text-xl">₹</span>
+        </div>
+        <input id="solarBillRange" type="range" min="500" max="50000" step="500" value="3000" class="w-full mt-4" />
+
+        <div class="grid grid-cols-2 gap-px bg-brand-border border border-brand-border mt-6">
+          <div class="bg-brand-carbon p-4">
+            <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted">सुझाया सिस्टम</div>
+            <div id="solarSize" class="font-heading font-black text-3xl text-brand-yellow">3 kW</div>
+          </div>
+          <div class="bg-brand-carbon p-4">
+            <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted">सब्सिडी (प्राप्य)</div>
+            <div id="solarSubsidy" class="font-heading font-black text-3xl text-brand-amber">₹78,000</div>
+          </div>
+          <div class="bg-brand-carbon p-4">
+            <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted">सालाना बचत</div>
+            <div id="solarSave" class="font-heading font-black text-3xl text-green-400">₹25,200</div>
+          </div>
+          <div class="bg-brand-carbon p-4">
+            <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted">रूफटॉप एरिया चाहिए</div>
+            <div id="solarArea" class="font-heading font-black text-3xl">~300 sq.ft</div>
+          </div>
+        </div>
+        <p class="font-mono text-[10px] text-brand-muted mt-4 leading-relaxed">* अनुमानित PM सूर्य घर मानदंड (₹7/यूनिट, 4 यूनिट/kW/दिन) पर आधारित। फाइनल आंकड़े फ्री साइट सर्वे के बाद।</p>
+        <a href="#contact" class="block text-center mt-5 px-6 py-3.5 bg-brand-yellow text-brand-black font-heading font-black text-lg uppercase tracking-wider hover:bg-white transition-all">इस साइज़ का कोटेशन पाएं →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOAD & LINE ESTIMATOR ================= -->
+<section id="calculator" class="bg-brand-carbon py-20 lg:py-28 border-y border-brand-border relative overflow-hidden">
+  <div class="absolute bottom-0 right-0 font-heading font-black text-[16vw] leading-none giant-outline opacity-[0.06] pointer-events-none select-none">EST</div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+    <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="font-mono text-brand-yellow font-bold">04/</span>
+        <span class="font-mono text-xs uppercase tracking-[0.3em] text-brand-steel">लोड व लागत अनुमानक</span>
+      </div>
+      <h2 class="font-heading font-black uppercase text-5xl sm:text-6xl lg:text-7xl leading-[0.9]">
+        कितना खर्च आएगा? <span class="text-brand-yellow">अभी निकालो।</span>
+      </h2>
+      <p class="mt-4 text-brand-steel">अपना लोड (kW), कनेक्शन टाइप और लाइन की दूरी डालो — ट्रांसफार्मर साइज़, कंडक्टर और अनुमानित लागत तुरंत देखो।</p>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-8 items-start">
+      <!-- Inputs -->
+      <div class="lg:col-span-2 bg-brand-black border-2 border-brand-border clip-industrial p-7 reveal">
+        <h3 class="font-heading font-black uppercase text-2xl mb-6 flex items-center gap-2"><span class="w-2.5 h-2.5 bg-brand-yellow inline-block"></span> अपनी डिटेल भरो</h3>
+
+        <label class="block font-mono text-xs uppercase tracking-widest text-brand-steel mb-2">① कनेक्शन टाइप</label>
+        <select id="calcType" class="w-full bg-brand-surface border-2 border-brand-border focus:border-brand-yellow outline-none px-4 py-3 font-mono font-bold mb-6 text-white">
+          <option value="lt1">LT 1-Phase (230V) — घर/दुकान</option>
+          <option value="lt3" selected>LT 3-Phase (415V) — फैक्टरी/पंप</option>
+          <option value="ht11">HT 11kV — बड़ी इंडस्ट्री</option>
+          <option value="ht33">HT 33kV — मेगा प्रोजेक्ट</option>
+        </select>
+
+        <label class="block font-mono text-xs uppercase tracking-widest text-brand-steel mb-2">② कनेक्टेड लोड: <span id="kwLabel" class="text-brand-yellow font-black">50 kW</span></label>
+        <input id="calcKw" type="range" min="1" max="1000" step="1" value="50" class="w-full mb-2" />
+        <input id="calcKwNum" type="number" min="1" max="1000" value="50" class="w-full bg-brand-surface border-2 border-brand-border focus:border-brand-yellow outline-none px-4 py-2.5 font-mono font-bold mb-6 text-white" />
+
+        <label class="block font-mono text-xs uppercase tracking-widest text-brand-steel mb-2">③ लाइन की लंबाई: <span id="kmLabel" class="text-brand-yellow font-black">0.5 km</span></label>
+        <input id="calcDist" type="range" min="0" max="20" step="0.1" value="0.5" class="w-full mb-2" />
+        <input id="calcDistNum" type="number" min="0" max="50" step="0.1" value="0.5" class="w-full bg-brand-surface border-2 border-brand-border focus:border-brand-yellow outline-none px-4 py-2.5 font-mono font-bold text-white" />
+
+        <button id="calcBtn" class="w-full mt-7 px-6 py-4 bg-brand-yellow text-brand-black font-heading font-black text-xl uppercase tracking-wider hover:bg-white transition-all shadow-hard active:translate-x-1 active:translate-y-1">⚡ अनुमान निकालें</button>
+      </div>
+
+      <!-- Results -->
+      <div class="lg:col-span-3 grid sm:grid-cols-2 gap-5 reveal d1">
+        <div class="bg-brand-black border border-brand-border p-6 clip-industrial border-l-4 border-l-brand-yellow">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted">लोड करंट (अनुमानित)</div>
+          <div id="resCurrent" class="font-heading font-black text-4xl mt-1">86.6 A</div>
+        </div>
+        <div class="bg-brand-black border border-brand-border p-6 clip-industrial border-l-4 border-l-brand-orange">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted">ट्रांसफार्मर साइज़</div>
+          <div id="resTx" class="font-heading font-black text-4xl mt-1 text-brand-orange">—</div>
+        </div>
+        <div class="bg-brand-black border border-brand-border p-6 clip-industrial border-l-4 border-l-brand-cyan">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted">सुझाया कंडक्टर/केबल</div>
+          <div id="resCond" class="font-heading font-black text-2xl mt-1 text-brand-cyan leading-tight">AB Cable 3C×95</div>
+        </div>
+        <div class="bg-gradient-to-br from-brand-card to-brand-surface border-2 border-brand-yellow p-6 clip-industrial">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-brand-steel">कुल अनुमानित लागत</div>
+          <div id="resCost" class="font-heading font-black text-3xl xl:text-4xl mt-1 text-brand-yellow leading-tight">₹ —</div>
+          <div class="font-mono text-[10px] text-brand-muted mt-1">(लाइन + ट्रांसफार्मर, इंस्टॉल सहित)</div>
+        </div>
+
+        <div class="sm:col-span-2 bg-brand-surface border border-brand-border p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <p class="font-mono text-xs text-brand-steel leading-relaxed">⚠ यह इंडिकेटिव अनुमान है। सटीक BOQ और DISCOM फीस के लिए <a href="#contact" class="text-brand-yellow underline font-bold">फ्री साइट सर्वे</a> बुक करें — 48 घंटे में लिखित कोटेशन।</p>
+          <a href="#contact" class="shrink-0 px-5 py-3 bg-brand-orange text-white font-heading font-black uppercase tracking-wider hover:bg-white hover:text-brand-orange transition-all">सटीक कोटेशन →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="bg-brand-black py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-12 reveal">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="font-mono text-brand-yellow font-bold">04.5/</span>
+        <span class="font-mono text-xs uppercase tracking-[0.3em] text-brand-steel">हमारी प्रक्रिया — How We Work</span>
+      </div>
+      <h2 class="font-heading font-black uppercase text-5xl sm:text-6xl leading-[0.9]">सर्वे से <span class="text-brand-yellow">स्विच-ऑन</span> तक, 6 स्टेप।</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-brand-border border border-brand-border">
+      <div class="bg-brand-carbon p-7 hover:bg-brand-surface transition-colors reveal">
+        <div class="font-heading font-black text-6xl text-brand-yellow/20">01</div>
+        <h3 class="font-heading font-black uppercase text-2xl mt-2">फ्री सर्वे &amp; BOQ</h3>
+        <p class="text-sm text-brand-steel mt-2">टीम साइट पर आकर लोड, दूरी व जमीन नापती है — लिखित BOQ 48 घंटे में।</p>
+      </div>
+      <div class="bg-brand-carbon p-7 hover:bg-brand-surface transition-colors reveal d1">
+        <div class="font-heading font-black text-6xl text-brand-yellow/20">02</div>
+        <h3 class="font-heading font-black uppercase text-2xl mt-2">DEEB / CEIG अप्रूवल</h3>
+        <p class="text-sm text-brand-steel mt-2">ड्रॉइंग, फीस व फॉलो-अप सब हमारी टीम करती है — आपको ऑफिस के चक्कर नहीं।</p>
+      </div>
+      <div class="bg-brand-carbon p-7 hover:bg-brand-surface transition-colors reveal d2">
+        <div class="font-heading font-black text-6xl text-brand-yellow/20">03</div>
+        <h3 class="font-heading font-black uppercase text-2xl mt-2">मटेरियल प्रोक्योरमेंट</h3>
+        <p class="text-sm text-brand-steel mt-2">ISI मार्क्ड मटेरियल, हर बैच का टेस्ट सर्टिफिकेट — कोई लोकल जुगाड़ नहीं।</p>
+      </div>
+      <div class="bg-brand-carbon p-7 hover:bg-brand-surface transition-colors reveal">
+        <div class="font-heading font-black text-6xl text-brand-orange/30">04</div>
+        <h3 class="font-heading font-black uppercase text-2xl mt-2">इंस्टॉलेशन व स्ट्रिंगिंग</h3>
+        <p class="text-sm text-brand-steel mt-2">अपनी क्रेन व टेंशन रिग से काम — सुरक्षा गियर पहने ट्रेंड लाइनमैन।</p>
+      </div>
+      <div class="bg-brand-carbon p-7 hover:bg-brand-surface transition-colors reveal d1">
+        <div class="font-heading font-black text-6xl text-brand-orange/30">05</div>
+        <h3 class="font-heading font-black uppercase text-2xl mt-2">टेस्टिंग</h3>
+        <p class="text-sm text-brand-steel mt-2">HVK, अर्थ रेजिस्टेंस, ऑयल BDV, रिले ट्राइप — पूरी रिपोर्ट हाथ में।</p>
+      </div>
+      <div class="bg-brand-carbon p-7 hover:bg-brand-surface transition-colors reveal d2">
+        <div class="font-heading font-black text-6xl text-brand-orange/30">06</div>
+        <h3 class="font-heading font-black uppercase text-2xl mt-2">कमीशनिंग व हैंडओवर</h3>
+        <p class="text-sm text-brand-steel mt-2">CEIG फाइनल इंस्पेक्शन, मीटर सीलिंग, स्विच-ऑन — और 5 साल सपोर्ट।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="bg-brand-carbon py-20 lg:py-24 border-y border-brand-border">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 reveal">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="font-mono text-brand-yellow font-bold">FAQ/</span>
+        <span class="font-mono text-xs uppercase tracking-[0.3em] text-brand-steel">सवाल-जवाब</span>
+      </div>
+      <h2 class="font-heading font-black uppercase text-5xl sm:text-6xl leading-[0.9]">जो सब पूछते हैं।</h2>
+    </div>
+
+    <div class="space-y-4">
+      <div class="bg-brand-black border border-brand-border reveal">
+        <button class="faq-btn w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-heading font-bold uppercase text-xl tracking-wide hover:text-brand-yellow transition-colors">
+          क्या DISCOM कनेक्शन और अप्रूवल का काम भी आप करते हैं?
+          <span class="faq-icon font-mono text-2xl text-brand-yellow shrink-0">+</span>
+        </button>
+        <div class="faq-panel hidden px-6 pb-6 text-brand-steel leading-relaxed">हाँ, बिल्कुल। नया कनेक्शन, लोड एन्हांसमेंट, DEEB/CEIG ड्रॉइंग अप्रूवल, इंस्पेक्शन और मीटर सीलिंग — पूरा लाइज़न हमारी टीम करती है। आपको कागज़ी कार्यवाही के लिए एक भी चक्कर नहीं लगाना पड़ता।</div>
+      </div>
+
+      <div class="bg-brand-black border border-brand-border reveal d1">
+        <button class="faq-btn w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-heading font-bold uppercase text-xl tracking-wide hover:text-brand-yellow transition-colors">
+          सोलर सब्सिडी कैसे और कितनी मिलेगी?
+          <span class="faq-icon font-mono text-2xl text-brand-yellow shrink-0">+</span>
+        </button>
+        <div class="faq-panel hidden px-6 pb-6 text-brand-steel leading-relaxed">PM सूर्य घर योजना में 1kW पर ₹30,000, 2kW पर ₹60,000 और 3kW+ पर ₹78,000 तक सब्सिडी मिलती है। हम आपका पंजीकरण, डॉक्यूमेंट, इंस्पेक्शन और सब्सिडी सीधे बैंक अकाउंट में आने तक पूरा प्रोसेस संभालते हैं।</div>
+      </div>
+
+      <div class="bg-brand-black border border-brand-border reveal d2">
+        <button class="faq-btn w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-heading font-bold uppercase text-xl tracking-wide hover:text-brand-yellow transition-colors">
+          प्रोजेक्ट पूरा होने में कितना समय लगता है?
+          <span class="faq-icon font-mono text-2xl text-brand-yellow shrink-0">+</span>
+        </button>
+        <div class="faq-panel hidden px-6 pb-6 text-brand-steel leading-relaxed">आमतौर पर — LT लाइन: 1–2 हफ्ते, ट्रांसफार्मर इंस्टॉलेशन: 1 हफ्ता, HT लाइन: 3–6 हफ्ते (अप्रूवल समय सहित), रूफटॉप सोलर: साइट सर्वे के बाद 7–10 दिन। सर्वे के समय ही लिखित टाइमलाइन देते हैं और उस पर खरे उतरते हैं।</div>
+      </div>
+
+      <div class="bg-brand-black border border-brand-border reveal d3">
+        <button class="faq-btn w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-heading font-bold uppercase text-xl tracking-wide hover:text-brand-yellow transition-colors">
+          पेमेंट और वारंटी की शर्तें क्या हैं?
+          <span class="faq-icon font-mono text-2xl text-brand-yellow shrink-0">+</span>
+        </button>
+        <div class="faq-panel hidden px-6 pb-6 text-brand-steel leading-relaxed">पेमेंट माइलस्टोन आधारित है — BOQ पर लिखित सहमति के बाद एडवांस, मटेरियल डिलीवरी और कमीशनिंग पर बाकी। वर्कमैनशिप पर <strong class="text-white">5 वर्ष वारंटी</strong>, सोलर पैनल पर 25 वर्ष परफॉरमेंस वारंटी, और इन्वर्टर पर 5–10 वर्ष कंपनी वारंटी मिलती है।</div>
+      </div>
+
+      <div class="bg-brand-black border border-brand-border reveal d4">
+        <button class="faq-btn w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-heading font-bold uppercase text-xl tracking-wide hover:text-brand-yellow transition-colors">
+          HT लाइन में फॉल्ट हो जाए तो?
+          <span class="faq-icon font-mono text-2xl text-brand-yellow shrink-0">+</span>
+        </button>
+        <div class="faq-panel hidden px-6 pb-6 text-brand-steel leading-relaxed">हमारा <strong class="text-brand-yellow">24x7 फॉल्ट डेस्क (+91 7000703078)</strong> हमेशा चालू रहता है। AMC क्लाइंट्स के लिए औसत रिस्पॉन्स टाइम 4 घंटे से कम रहता है — क्योंकि बिजली बंद होने का हर घंटा आपका नुकसान है।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT / QUOTATION ================= -->
+<section id="contact" class="bg-brand-black bg-grid-industrial py-20 lg:py-28 relative overflow-hidden">
+  <div class="hazard-thin h-1.5 w-full absolute top-0"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-12 gap-12">
+
+      <!-- Copy + info -->
+      <div class="lg:col-span-5 reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="font-mono text-brand-yellow font-bold">05/</span>
+          <span class="font-mono text-xs uppercase tracking-[0.3em] text-brand-steel">संपर्क व कोटेशन — Get a Quote</span>
+        </div>
+        <h2 class="font-heading font-black uppercase text-5xl sm:text-6xl lg:text-7xl leading-[0.9]">
+          बात बनाओ,<br/><span class="text-brand-yellow">काम शुरू करो।</span>
+        </h2>
+        <p class="mt-6 text-brand-steel text-lg leading-relaxed">
+          फॉर्म भरो या सीधे कॉल करो — <strong class="text-white">48 घंटे के अंदर लिखित कोटेशन</strong>, साइट सर्वे फ्री, और कोई ज़बरदस्ती नहीं। एक कॉल में समझ जाएंगे कि काम कितने में और कितने दिन में होगा।
+        </p>
+
+        <div class="mt-8 space-y-4">
+          <a href="tel:+917000703078" class="flex items-center gap-4 bg-brand-card border border-brand-border hover:border-brand-yellow p-5 clip-industrial transition-colors group">
+            <div class="w-12 h-12 bg-brand-yellow text-brand-black flex items-center justify-center font-black text-xl clip-industrial">📞</div>
+            <div>
+              <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted">कॉल / WhatsApp — 24x7</div>
+              <div class="font-heading font-black text-2xl group-hover:text-brand-yellow transition-colors">+91 7000703078</div>
+            </div>
+          </a>
+          <a href="mailto:narmadapowertransmission@gmail.com" class="flex items-center gap-4 bg-brand-card border border-brand-border hover:border-brand-cyan p-5 clip-industrial transition-colors group">
+            <div class="w-12 h-12 bg-brand-cyan text-black flex items-center justify-center font-black text-xl clip-industrial">✉</div>
+            <div class="min-w-0">
+              <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted">ईमेल — BOQ / टेंडर डॉक्यूमेंट</div>
+              <div class="font-mono font-bold text-sm sm:text-base truncate group-hover:text-brand-cyan transition-colors">narmadapowertransmission@gmail.com</div>
+            </div>
+          </a>
+          <div class="flex items-center gap-4 bg-brand-card border border-brand-border p-5 clip-industrial">
+            <div class="w-12 h-12 bg-brand-orange text-white flex items-center justify-center font-black text-xl clip-industrial">📍</div>
+            <div>
+              <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted">मुख्यालय</div>
+              <div class="font-semibold text-white text-sm sm:text-base">नर्मदा पावर ट्रांसमिशन, मुख्य बाज़ार, कसरावद,<br/>जिला खरगोन, मध्य प्रदेश — 451228</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 bg-brand-card border border-brand-border p-5 clip-industrial">
+            <div class="w-12 h-12 bg-brand-surface border border-brand-border text-brand-yellow flex items-center justify-center font-black text-xl clip-industrial">🕘</div>
+            <div>
+              <div class="font-mono text-[10px] uppercase tracking-widest text-brand-muted">ऑफिस समय</div>
+              <div class="font-semibold text-white text-sm sm:text-base">सोम–शनि: सुबह 9 से शाम 7 बजे • फॉल्ट डेस्क: 24x7</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="lg:col-span-7 reveal d2">
+        <div class="bg-brand-carbon border-2 border-brand-border clip-industrial">
+          <div class="bg-brand-yellow text-brand-black px-7 py-4 flex items-center justify-between flex-wrap gap-2">
+            <span class="font-heading font-black uppercase text-2xl tracking-wide">फ्री कोटेशन फॉर्म</span>
+            <span class="font-mono text-[10px] font-black bg-black text-brand-yellow px-2.5 py-1 uppercase tracking-widest clip-badge">रिस्पॉन्स &lt; 24 घंटे</span>
+          </div>
+
+          <form id="quoteForm" class="p-7 sm:p-9 space-y-5" novalidate>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="fName" class="block font-mono text-[11px] uppercase tracking-widest text-brand-steel mb-2">पूरा नाम *</label>
+                <input id="fName" type="text" required placeholder="आपका नाम"
+                  class="w-full bg-brand-surface border-2 border-brand-border focus:border-brand-yellow outline-none px-4 py-3 text-white placeholder-brand-muted" />
+              </div>
+              <div>
+                <label for="fPhone" class="block font-mono text-[11px] uppercase tracking-widest text-brand-steel mb-2">मोबाइल नंबर *</label>
+                <input id="fPhone" type="tel" required pattern="[0-9]{10}" maxlength="10" placeholder="10 अंकों का नंबर"
+                  class="w-full bg-brand-surface border-2 border-brand-border focus:border-brand-yellow outline-none px-4 py-3 font-mono text-white placeholder-brand-muted" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="fPlace" class="block font-mono text-[11px] uppercase tracking-widest text-brand-steel mb-2">गाँव / शहर / जिला *</label>
+                <input id="fPlace" type="text" required placeholder="जैसे: कसरावद, खरगोन"
+                  class="w-full bg-brand-surface border-2 border-brand-border focus:border-brand-yellow outline-none px-4 py-3 text-white placeholder-brand-muted" />
+              </div>
+              <div>
+                <label for="fService" class="block font-mono text-[11px] uppercase tracking-widest text-brand-steel mb-2">कौन-सा काम करवाना है? *</label>
+                <select id="fService" required class="w-full bg-brand-surface border-2 border-brand-border focus:border-brand-yellow outline-none px-4 py-3 text-white">
+                  <option value="">— चुनें —</option>
+                  <option>HT लाइन वर्क (11/33kV)</option>
+                  <option>LT लाइन / डिस्ट्रीब्यूशन</option>
+                  <option>ट्रांसफार्मर इंस्टॉलेशन / रिपेयर</option>
+                  <option>सबस्टेशन EPC</option>
+                  <option>मेगा सोलर EPC (MW स्केल)</option>
+                  <option>रूफटॉप सोलर (1kW–1MW)</option>
+                  <option>सोलर पंप / एग्री कनेक्शन</option>
+                  <option>AMC / मेंटेनेंस / फॉल्ट रिपेयर</option>
+                  <option>अन्य</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="fLoad" class="block font-mono text-[11px] uppercase tracking-widest text-brand-steel mb-2">अनुमानित लोड / साइज़ (optional)</label>
+              <input id="fLoad" type="text" placeholder="जैसे: 25 kW / 100 kVA / 5 kW सोलर"
+                class="w-full bg-brand-surface border-2 border-brand-border focus:border-brand-yellow outline-none px-4 py-3 font-mono text-white placeholder-brand-muted" />
+            </div>
+
+            <div>
+              <label for="fMsg" class="block font-mono text-[11px] uppercase tracking-widest text-brand-steel mb-2">काम की डिटेल / संदेश</label>
+              <textarea id="fMsg" rows="4" placeholder="ज़मीन की जानकारी, कनेक्शन का टाइप, कितने पोल की दूरी आदि — जो भी पता हो लिख दें।"
+                class="w-full bg-brand-surface border-2 border-brand-border focus:border-brand-yellow outline-none px-4 py-3 text-white placeholder-brand-muted resize-none"></textarea>
+            </div>
+
+            <div id="formError" class="hidden bg-red-500/10 border border-red-500 text-red-400 font-mono text-sm px-4 py-3">⚠ कृपया नाम, 10-अंकों का मोबाइल नंबर, स्थान और सेवा ज़रूर भरें।</div>
+
+            <button type="submit" class="w-full px-6 py-4.5 py-4 bg-brand-yellow text-brand-black font-heading font-black text-2xl uppercase tracking-wider hover:bg-white transition-all shadow-hard active:translate-x-1 active:translate-y-1">
+              ⚡ फ्री कोटेशन पाएं →
+            </button>
+
+            <div id="formSuccess" class="hidden bg-green-500/10 border border-green-500 px-5 py-4">
+              <div class="font-heading font-black uppercase text-xl text-green-400">✔ संदेश तैयार हो गया!</div>
+              <p class="text-sm text-brand-steel mt-1">WhatsApp खुल गया है — भेजने पर हमारी टीम <strong class="text-white">24 घंटे के अंदर</strong> आपसे संपर्क करेगी। न भेज सकें तो सीधे कॉल करें: <a href="tel:+917000703078" class="text-brand-yellow font-bold underline">7000703078</a></p>
+            </div>
+
+            <p class="font-mono text-[11px] text-brand-muted leading-relaxed">* आपकी जानकारी सिर्फ़ कोटेशन के लिए उपयोग होगी। सबमिट करने पर डिटेल हमारे WhatsApp पर पहुँच जाती है — कोई स्पैम नहीं, कोई कॉल-स्पैम नहीं।</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-brand-carbon border-t-4 border-brand-yellow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+    <div>
+      <div class="flex items-center gap-2.5 mb-4">
+        <div class="w-10 h-10 bg-brand-yellow text-brand-black flex items-center justify-center font-heading font-black text-2xl clip-industrial">⚡</div>
+        <span class="font-heading font-black text-2xl uppercase leading-none">NARMADA <span class="text-brand-yellow">POWER</span></span>
+      </div>
+      <p class="text-sm text-brand-steel leading-relaxed">म.प्र. का भरोसेमंद 'A' क्लास इलेक्ट्रिकल कॉन्ट्रैक्टर — HT/LT लाइन, ट्रांसफार्मर, सबस्टेशन और सोलर EPC। 2012 से खरगोन-निमाड़ क्षेत्र में।</p>
+      <div class="flex gap-2 mt-4">
+        <span class="font-mono text-[10px] bg-brand-surface border border-brand-border px-2 py-1 uppercase tracking-widest text-brand-steel">CEIG 'A'</span>
+        <span class="font-mono text-[10px] bg-brand-surface border border-brand-border px-2 py-1 uppercase tracking-widest text-brand-steel">DISCOM ✓</span>
+        <span class="font-mono text-[10px] bg-brand-surface border border-brand-border px-2 py-1 uppercase tracking-widest text-brand-steel">GeM ✓</span>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="font-heading font-black uppercase text-xl mb-4 text-brand-yellow">सेवाएं</h4>
+      <ul class="space-y-2.5 text-sm text-brand-steel">
+        <li><a href="#services" class="hover:text-brand-yellow transition-colors">▸ 11/33kV HT लाइन वर्क</a></li>
+        <li><a href="#services" class="hover:text-brand-yellow transition-colors">▸ 415V LT डिस्ट्रीब्यूशन</a></li>
+        <li><a href="#services" class="hover:text-brand-yellow transition-colors">▸ ट्रांसफार्मर 25–2500 kVA</a></li>
+        <li><a href="#services" class="hover:text-brand-yellow transition-colors">▸ सबस्टेशन EPC</a></li>
+        <li><a href="#solar" class="hover:text-brand-yellow transition-colors">▸ मेगा सोलर EPC</a></li>
+        <li><a href="#solar" class="hover:text-brand-yellow transition-colors">▸ रूफटॉप सोलर व नेट-मीटरिंग</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-heading font-black uppercase text-xl mb-4 text-brand-yellow">कंपनी</h4>
+      <ul class="space-y-2.5 text-sm text-brand-steel">
+        <li><a href="#profile" class="hover:text-brand-yellow transition-colors">▸ कंपनी प्रोफाइल</a></li>
+        <li><a href="#calculator" class="hover:text-brand-yellow transition-colors">▸ लोड/लागत कैलकुलेटर</a></li>
+        <li><a href="#faq" class="hover:text-brand-yellow transition-colors">▸ सवाल-जवाब</a></li>
+        <li><a href="#contact" class="hover:text-brand-yellow transition-colors">▸ कोटेशन / BOQ</a></li>
+        <li><a href="tel:+917000703078" class="hover:text-brand-yellow transition-colors">▸ 24x7 फॉल्ट डेस्क</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-heading font-black uppercase text-xl mb-4 text-brand-yellow">संपर्क</h4>
+      <ul class="space-y-2.5 text-sm text-brand-steel">
+        <li>📞 <a href="tel:+917000703078" class="font-mono font-bold text-white hover:text-brand-yellow">+91 7000703078</a></li>
+        <li>✉ <a href="mailto:narmadapowertransmission@gmail.com" class="hover:text-brand-yellow break-all">narmadapowertransmission@gmail.com</a></li>
+        <li>📍 मुख्य बाज़ार, कसरावद,<br/>&nbsp;&nbsp;&nbsp;&nbsp;जिला खरगोन, म.प्र. — 451228</li>
+        <li>🕘 सोम–शनि 9:00–19:00</li>
+      </ul>
+      <a href="#contact" class="inline-block mt-5 px-5 py-3 bg-brand-yellow text-brand-black font-heading font-black uppercase tracking-wider hover:bg-white transition-all">कोटेशन लें →</a>
+    </div>
+  </div>
+
+  <div class="hazard-stripe h-2.5 w-full"></div>
+  <div class="bg-black py-5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 font-mono text-[11px] text-brand-muted text-center sm:text-left">
+      <span>© <span id="year">2025</span> NARMADA POWER TRANSMISSION — सर्वाधिकार सुरक्षित।</span>
+      <span class="uppercase tracking-widest">भारत में निर्मित ⚡ खरगोन, मध्य प्रदेश</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="backTop" class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-brand-yellow text-brand-black font-black text-xl clip-industrial shadow-hard opacity-0 pointer-events-none transition-opacity hover:bg-white" aria-label="ऊपर जाएं">↑</button>
+
+<script>
+/* ============ MOBILE MENU ============ */
+const menuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+/* ============ NAV SHADOW ============ */
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('shadow-2xl', window.scrollY > 12);
+  const bt = document.getElementById('backTop');
+  const show = window.scrollY > 600;
+  bt.classList.toggle('opacity-0', !show);
+  bt.classList.toggle('pointer-events-none', !show);
+});
+document.getElementById('backTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ============ SCROLL REVEAL ============ */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ============ COUNTERS ============ */
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const dur = 1600, start = performance.now();
+  function tick(now) {
+    const p = Math.min((now - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(target * eased).toLocaleString('en-IN') + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const statsObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('[data-count]').forEach(animateCounter);
+      statsObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+const statsEl = document.getElementById('stats');
+if (statsEl) statsObs.observe(statsEl);
+
+/* ============ FAQ ACCORDION ============ */
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const panel = btn.nextElementSibling;
+    const wasOpen = !panel.classList.contains('hidden');
+    document.querySelectorAll('.faq-panel').forEach(p => p.classList.add('hidden'));
+    document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+    if (!wasOpen) { panel.classList.remove('hidden'); btn.querySelector('.faq-icon').textContent = '–'; }
+  });
+});
+
+/* ============ SOLAR CALCULATOR ============ */
+const fmtINR = n => '₹' + new Intl.NumberFormat('en-IN').format(Math.round(n));
+const solarBill = document.getElementById('solarBill');
+const solarRange = document.getElementById('solarBillRange');
+function runSolar() {
+  const bill = parseFloat(solarBill.value) || 0;
+  solarRange.value = Math.min(Math.max(bill, 500), 50000);
+  const monthlyUnits = bill / 7;
+  const sysKw = Math.max(1, Math.min(10, Math.round(monthlyUnits / 30 / 4)));
+  const subsidy = sysKw <= 2 ? sysKw * 30000 : 78000;
+  const annualUnits = monthlyUnits * 12;
+  const savedUnits = Math.min(sysKw * 4 * 365, annualUnits);
+  const savings = savedUnits * 7;
+  document.getElementById('solarSize').textContent = sysKw + ' kW';
+  document.getElementById('solarSubsidy').textContent = fmtINR(subsidy);
+  document.getElementById('solarSave').textContent = fmtINR(savings);
+  document.getElementById('solarArea').textContent = '~' + (sysKw * 100) + ' sq.ft';
+}
+solarBill.addEventListener('input', runSolar);
+solarRange.addEventListener('input', () => { solarBill.value = solarRange.value; runSolar(); });
+runSolar();
+
+/* ============ LOAD / LINE ESTIMATOR ============ */
+const calcType = document.getElementById('calcType');
+const calcKw = document.getElementById('calcKw');
+const calcKwNum = document.getElementById('calcKwNum');
+const calcDist = document.getElementById('calcDist');
+const calcDistNum = document.getElementById('calcDistNum');
+
+function syncKw(v) { calcKw.value = v; calcKwNum.value = v; document.getElementById('kwLabel').textContent = v + ' kW'; runEstimate(); }
+function syncDist(v) { calcDist.value = v; calcDistNum.value = v; document.getElementById('kmLabel').textContent = parseFloat(v).toFixed(1) + ' km'; runEstimate(); }
+
+calcKw.addEventListener('input', () => syncKw(calcKw.value));
+calcKwNum.addEventListener('input', () => { if (calcKwNum.value >= 1) syncKw(calcKwNum.value); });
+calcDist.addEventListener('input', () => syncDist(calcDist.value));
+calcDistNum.addEventListener('input', () => { if (calcDistNum.value !== '') syncDist(calcDistNum.value); });
+calcType.addEventListener('change', runEstimate);
+document.getElementById('calcBtn').addEventListener('click', runEstimate);
+
+function runEstimate() {
+  const kw = parseFloat(calcKwNum.value) || 0;
+  const km = parseFloat(calcDistNum.value) || 0;
+  const type = calcType.value;
+
+  // current
+  let V, phases;
+  if (type === 'lt1') { V = 230; phases = 1; }
+  else if (type === 'lt3') { V = 415; phases = 3; }
+  else if (type === 'ht11') { V = 11000; phases = 3; }
+  else { V = 33000; phases = 3; }
+  const current = phases === 1 ? (kw * 1000) / (V * 0.8) : (kw * 1000) / (1.732 * V * 0.8);
+
+  // transformer
+  const sizes = [25, 63, 100, 200, 315, 500, 1000, 1600, 2500];
+  let txText = '— (LT कनेक्शन)', txKva = 0;
+  if (type === 'ht11' || type === 'ht33') {
+    const need = kw / 0.8;
+    txKva = sizes.find(s => s >= need) || 0;
+    txText = txKva ? txKva + ' kVA' : 'कस्टम 2.5 MVA+';
+  }
+
+  // conductor
+  let cond;
+  if (type === 'ht11') cond = current <= 30 ? 'ACSR Rabbit (HT)' : 'ACSR Weasel / Panther';
+  else if (type === 'ht33') cond = current <= 30 ? 'ACSR Panther (33kV)' : 'ACSR Wolf / Moose';
+  else if (type === 'lt3') cond = current <= 100 ? 'AB Cable 3C×95 sq.mm' : 'AB 3C×150 / ACSR LT';
+  else cond = 'AB Cable 1C×35–50 (SP)';
+
+  // cost (indicative)
+  const rates = { lt1: [70000, 110000], lt3: [110000, 160000], ht11: [250000, 350000], ht33: [600000, 850000] };
+  const [lo, hi] = rates[type];
+  let totLo = km * lo, totHi = km * hi;
+  if (txKva) { totLo += txKva * 28000; totHi += txKva * 34000; }
+
+  document.getElementById('resCurrent').textContent = current.toFixed(1) + ' A';
+  document.getElementById('resTx').textContent = txText;
+  document.getElementById('resCond').textContent = cond;
+  document.getElementById('resCost').textContent = km > 0 ? fmtINR(totLo) + ' – ' + fmtINR(totHi) : 'दूरी डालें';
+}
+runEstimate();
+
+/* ============ QUOTE FORM → WHATSAPP ============ */
+document.getElementById('quoteForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const name = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const place = document.getElementById('fPlace').value.trim();
+  const service = document.getElementById('fService').value;
+  const load = document.getElementById('fLoad').value.trim();
+  const msg = document.getElementById('fMsg').value.trim();
+  const err = document.getElementById('formError');
+
+  if (!name || !/^[0-9]{10}$/.test(phone) || !place || !service) {
+    err.classList.remove('hidden');
+    return;
+  }
+  err.classList.add('hidden');
+
+  let text = 'नमस्ते NARMADA POWER TRANSMISSION! मुझे कोटेशन चाहिए।\n';
+  text += '----------------------------\n';
+  text += '👤 नाम: ' + name + '\n';
+  text += '📱 मोबाइल: ' + phone + '\n';
+  text += '📍 स्थान: ' + place + '\n';
+  text += '⚡ सेवा: ' + service + '\n';
+  if (load) text += '🔢 लोड/साइज़: ' + load + '\n';
+  if (msg) text += '📝 डिटेल: ' + msg + '\n';
+  text += '----------------------------\nकृपया जल्द संपर्क करें। धन्यवाद!';
+
+  window.open('https://wa.me/917000703078?text=' + encodeURIComponent(text), '_blank');
+  document.getElementById('formSuccess').classList.remove('hidden');
+  this.reset();
+  document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+/* ============ FOOTER YEAR ============ */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
